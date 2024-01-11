@@ -1,41 +1,67 @@
 /* turn caps to fn */
 
+SetCapsLockState "AlwaysOff"
+
 CapsLock & i::
 {
-    Send "{Up}"
+    if GetKeyState("Shift", "p")
+        Send "+{Up}"
+    else
+        Send "{Up}"
 }
 
 CapsLock & k::
 {
-    Send "{Down}"
+    if GetKeyState("Shift", "p")
+        Send "+{Down}"
+    else
+        Send "{Down}"
 }
 
 CapsLock & j::
 {
-    Send "{Left}"
+    if GetKeyState("Shift", "p")
+        Send "+{Left}"
+    else
+        Send "{Left}"
 }
 
 CapsLock & l::
 {
-    Send "{Right}"
+    if GetKeyState("Shift", "p")
+        Send "+{Right}"
+    else
+        Send "{Right}"
 }
 
 CapsLock & p::
 {
-    Send "{PgUp}"
+    if GetKeyState("Shift", "p")
+        Send "+{PgUp}"
+    else
+        Send "{PgUp}"
 }
 
 CapsLock & `;::
 {
-    Send "{PgDn}"
+    if GetKeyState("Shift", "p")
+        Send "+{PgDn}"
+    else
+        Send "{PgDn}"
 }
 
 CapsLock & [::
 {
-    Send "{Home}"
+    if GetKeyState("Shift", "p")
+        Send "+{Home}"
+    else
+        Send "{Home}"
 }
 
 CapsLock & '::
 {
-    Send "{End}"
+    if GetKeyState("Shift", "p")
+        Send "+{End}"
+    else
+        Send "{End}"
 }
