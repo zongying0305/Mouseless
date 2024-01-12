@@ -4,32 +4,48 @@ SetCapsLockState "AlwaysOff"
 
 CapsLock & i::
 {
-    if GetKeyState("Shift", "p")
+    if (GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!+{Up}"
+    else if (GetKeyState("Shift") && !GetKeyState("Alt"))
         Send "+{Up}"
+    else if (!GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!{Up}"
     else
         Send "{Up}"
 }
 
 CapsLock & k::
 {
-    if GetKeyState("Shift", "p")
+    if (GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!+{Down}"
+    else if (GetKeyState("Shift") && !GetKeyState("Alt"))
         Send "+{Down}"
+    else if (!GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!{Down}"
     else
         Send "{Down}"
 }
 
 CapsLock & j::
 {
-    if GetKeyState("Shift", "p")
+    if (GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!+{Left}"
+    else if (GetKeyState("Shift") && !GetKeyState("Alt"))
         Send "+{Left}"
+    else if (!GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!{Left}"
     else
         Send "{Left}"
 }
 
 CapsLock & l::
 {
-    if GetKeyState("Shift", "p")
+    if (GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!+{Right}"
+    else if (GetKeyState("Shift") && !GetKeyState("Alt"))
         Send "+{Right}"
+    else if (!GetKeyState("Shift") && GetKeyState("Alt"))
+        Send "!{Right}"
     else
         Send "{Right}"
 }
@@ -64,4 +80,9 @@ CapsLock & '::
         Send "+{End}"
     else
         Send "{End}"
+}
+
+CapsLock & Backspace::
+{
+    Send "{Delete}"
 }
