@@ -52,7 +52,9 @@ CapsLock & l::
 
 CapsLock & p::
 {
-    if GetKeyState("Shift", "p")
+    if (GetKeyState("Shift") && GetKeyState("Ctrl"))
+        Send "^+{PgUp}"
+    else if (GetKeyState("Shift") && !GetKeyState("Ctrl"))
         Send "+{PgUp}"
     else
         Send "{PgUp}"
@@ -60,7 +62,9 @@ CapsLock & p::
 
 CapsLock & `;::
 {
-    if GetKeyState("Shift", "p")
+    if (GetKeyState("Shift") && GetKeyState("Ctrl"))
+        Send "^+{PgDn}"
+    else if (GetKeyState("Shift") && !GetKeyState("Ctrl"))
         Send "+{PgDn}"
     else
         Send "{PgDn}"
